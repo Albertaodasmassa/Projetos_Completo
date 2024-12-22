@@ -15,9 +15,13 @@ namespace Teste
         }
         static void dimi()
         {
-            int v3=50,v4=10,res2;
-            res2=v3-v4;
-            Console.WriteLine("O resultado é {0}", res2);
+            Console.WriteLine("Por favor Informe o primeiro Numero");
+            int v3 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Por favor Informe o primeiro Numero");
+            int v4 = Convert.ToInt16(Console.ReadLine());
+            int res;
+            res=v3-v4;
+            Console.WriteLine("O resultado é {0}", res);
         }
         static void Main()
         {
