@@ -12,6 +12,8 @@ class Program
    //Sempre usar o Update para atualizar o TMP Quando for atualizar chamar a função em outro script
    //TMP não precisa ter o nome colocado aqui
    //TMP precisa ser .text
+   //Criar um script para ponto de tiro
+   //Criar um script para o playerstatus pode ser playerinfo ou qualquer nome
     void Start()
     {
         vida = 10;
