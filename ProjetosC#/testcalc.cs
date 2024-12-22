@@ -4,10 +4,10 @@ class Program
 {
     static void Main()
     {
-    Console.WriteLine("Bem Vindo a calculadora");
-    Console.WriteLine("Digite o Valor do Aporte Inicial");
+    Console.WriteLine("=======Bem Vindo a calculadora======");
+    Console.Write("Digite o Valor do Aporte Inicial:");
     decimal principal = Convert.ToDecimal(Console.ReadLine());
-    Console.WriteLine("Digite o Tempo do investimento em Anos");
+    Console.Write("Digite o Tempo do investimento em Anos:");
     int tempo = Convert.ToInt32(Console.ReadLine());
     decimal resultado = 0;
     Console.WriteLine("Selecione uma opcao 1 ou 2");
