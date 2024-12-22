@@ -5,7 +5,11 @@ namespace Teste
     {
         static void soma()
         {
-            int v1=10,v2=20,res;
+            Console.WriteLine("Por favor Informe o primeiro Numero");
+            int v1 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Por favor Informe o primeiro Numero");
+            int v2 = Convert.ToInt16(Console.ReadLine());
+            int res;
             res=v1+v2;
             Console.WriteLine("O resultado é {0}", res);
         }
