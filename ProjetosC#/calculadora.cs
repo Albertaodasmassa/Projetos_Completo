@@ -16,7 +16,7 @@ namespace WindowsFormsApp2
     {
         public Form1()
         {
-            InitializeComponent();//Inicializa um componente
+            InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -33,8 +33,20 @@ namespace WindowsFormsApp2
 
                 // Fórmula para o cálculo do valor futuro
                 double valorFuturo = valorInvestido * Math.Pow(1 + taxaJuros, tempo);
-                double imposto = valorFuturo * 0.20;
-
+                if (tempo <= 1)
+                {
+                    double imposto = valorFuturo * 0.17;
+                    lbImposto.Text= $"Valor do imposto será de 17,5% R$ {imposto:0.00}";
+                }else if(tempo >= 2)
+                {
+                    double imposto = valorFuturo * 0.15;
+                    lbImposto.Text = $"Valor do imposto será de 15% R$ {imposto:0.00}";
+                }
+                else
+                {
+                    double imposto = valorFuturo * 0.15;
+                    lbImposto.Text = $"Valor do imposto será de 15% R$ {imposto:0.00}";
+                }
                 // Exibir o resultado
                 lbResultado.Text = $"Valor Futuro: R$ {valorFuturo:0.00}";
             }
