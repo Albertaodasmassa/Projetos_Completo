@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Calculadora feita em C# no Visual Studio colocar dentro do script do form para ações
+// Acima são as bibliotecas ncessarias para rodar
 
 namespace WindowsFormsApp2
 {
@@ -14,7 +16,7 @@ namespace WindowsFormsApp2
     {
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();//Inicializa um componente
         }
 
         private void Form1_Load(object sender, EventArgs e)
