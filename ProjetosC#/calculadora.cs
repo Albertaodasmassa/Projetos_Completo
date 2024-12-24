@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //Calculadora feita em C# no Visual Studio colocar dentro do script do form para ações
 // Acima são as bibliotecas ncessarias para rodar
-
 namespace WindowsFormsApp2
 {
     public partial class Form1 : Form
@@ -35,23 +34,31 @@ namespace WindowsFormsApp2
                 double valorFuturo = valorInvestido * Math.Pow(1 + taxaJuros, tempo);
                 double rend = valorFuturo - valorInvestido;
 
-                if (tempo <= 1)
+                // Se Tempo for 1 ano ou menor será aplicado uma Alicota de 17% de IR.
+                if (tempo <= 1) 
                 {
                     double imposto = valorFuturo * 0.17;
+                    double impostoFonte = rend - imposto;
                     lbImposto.Text= $"Valor do imposto será de 17,5% R$ {imposto:0.00}";
-                }else if(tempo >= 2)
+                    lbimpostoFonte.Text = $"Valor Liquido: R$ {impostoFonte:0.00}";
+                }
+                else if(tempo >= 2)
                 {
                     double imposto = valorFuturo * 0.15;
+                    double impostoFonte = rend - imposto;
                     lbImposto.Text = $"Valor do imposto será de 15% R$ {imposto:0.00}";
+                    lbimpostoFonte.Text = $"Valor Liquido: R$ {impostoFonte:0.00}";
                 }
                 else
                 {
                     double imposto = valorFuturo * 0.15;
+                    double impostoFonte = rend - imposto;
                     lbImposto.Text = $"Valor do imposto será de 15% R$ {imposto:0.00}";
+                    lbimpostoFonte.Text = $"Valor Liquido R$ {impostoFonte:0.00}";
                 }
                 // Exibir o resultado
                 lbResultado.Text = $"Valor Total Será: R$ {valorFuturo:0.00}";
-                lbrend.Text = $"Valor Futuro: R$ {rend:0.00}";
+                lbrend.Text = $"Rendimento Bruto R$ {rend:0.00}";
             }
             catch (Exception)
             {
@@ -78,6 +85,10 @@ namespace WindowsFormsApp2
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
