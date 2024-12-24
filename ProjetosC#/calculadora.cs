@@ -33,6 +33,8 @@ namespace WindowsFormsApp2
 
                 // Fórmula para o cálculo do valor futuro
                 double valorFuturo = valorInvestido * Math.Pow(1 + taxaJuros, tempo);
+                double rend = valorFuturo - valorInvestido;
+
                 if (tempo <= 1)
                 {
                     double imposto = valorFuturo * 0.17;
@@ -48,7 +50,8 @@ namespace WindowsFormsApp2
                     lbImposto.Text = $"Valor do imposto será de 15% R$ {imposto:0.00}";
                 }
                 // Exibir o resultado
-                lbResultado.Text = $"Valor Futuro: R$ {valorFuturo:0.00}";
+                lbResultado.Text = $"Valor Total Será: R$ {valorFuturo:0.00}";
+                lbrend.Text = $"Valor Futuro: R$ {rend:0.00}";
             }
             catch (Exception)
             {
