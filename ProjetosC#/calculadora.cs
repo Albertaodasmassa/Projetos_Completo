@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 //Calculadora feita em C# no Visual Studio colocar dentro do script do form para ações
 // Acima são as bibliotecas ncessarias para rodar
+// Foi feito um IF para verificar.
+// Outro para calcular o tempo.
 namespace WindowsFormsApp2
 {
-    public partial class Form1 : Form
+    public partial class Calculadora : Form
     {
-        public Form1()
+        public Calculadora()
         {
             InitializeComponent();
         }
@@ -29,13 +31,15 @@ namespace WindowsFormsApp2
                 double valorInvestido = double.Parse(txtValorInvestido.Text);
                 double taxaJuros = double.Parse(txtTaxaJuros.Text) / 100; // Converter para decimal
                 int tempo = int.Parse(txtTempo.Text);
+                int ano = 12;
+                int anoDeco = ano * tempo;
+
 
                 // Fórmula para o cálculo do valor futuro
                 double valorFuturo = valorInvestido * Math.Pow(1 + taxaJuros, tempo);
                 double rend = valorFuturo - valorInvestido;
 
-                // Se Tempo for 1 ano ou menor será aplicado uma Alicota de 17% de IR.
-                if (tempo <= 1) 
+                if (tempo <= 1)
                 {
                     double imposto = valorFuturo * 0.17;
                     double impostoFonte = rend - imposto;
@@ -59,6 +63,7 @@ namespace WindowsFormsApp2
                 // Exibir o resultado
                 lbResultado.Text = $"Valor Total Será: R$ {valorFuturo:0.00}";
                 lbrend.Text = $"Rendimento Bruto R$ {rend:0.00}";
+                lbtempoDec.Text = $"O Tempo da aplicação em meses será: {anoDeco:0}";
             }
             catch (Exception)
             {
