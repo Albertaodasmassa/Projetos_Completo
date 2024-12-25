@@ -20,7 +20,6 @@ def menu():
     
     # Usando um dicionário para simular o switch case
     #Chama a função simular ao js, porem em py, usa essa imundicia toda, em vez de um switch case simples como no js.
-    #que imundicia HAHAHA
     switch = {
         '1': insira_info,
         '2': cadastra_info,
