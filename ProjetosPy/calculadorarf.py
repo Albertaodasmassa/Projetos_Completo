@@ -10,14 +10,18 @@ def calculadorarf():
        tempo = int(entry_tmp.get())
        vf = valor_inv*(1+juros)**tempo
        imposto = vf*0.15
-       label_resultado.config(text=f"Valor Futuro: R$ {vf:,.2f}")
+       bruto = vf - valor_inv
+       liquido = bruto - imposto
+       label_resultado.config(text=f"O Valor total será R$: {vf:,.2f}")
        label_resultado2.config(text=f"O Valor do Imposto será de R$ {imposto:,.2f}")
+       label_rend.config(text=f"O valor do rendimento liquido será R$: {liquido:,.2f}")
+       label_bruto2.config(text=f"O Valor do rendimento será R$: {bruto:,.2f}")
     except ValueError:
         messagebox.showerror("Erro favor Informar valores validos")
     
 root = tk.Tk()
-root.title("Bem vindo a calculadora de renda fixa")
-root.geometry("300x450")
+root.title("Bem vindo a calculadora")
+root.geometry("450x450")
 
 label_valor = tk.Label(root,text="Valor Investido em R$:")
 label_valor.pack(pady=5)
@@ -43,5 +47,10 @@ label_resultado.pack(pady=10)
 label_resultado2 = tk.Label(root,text="O Imposto a pagar será R$",font=("Arial", 12, "bold"))
 label_resultado2.pack(pady=10)
 
-root.mainloop()
+label_rend = tk.Label(root,text="Valor Liquido",font=("Arial", 12, "bold"))
+label_rend.pack(pady=10)
 
+label_bruto2 = tk.Label(root,text="Valor Bruto",font=("Arial", 12, "bold"))
+label_bruto2.pack(pady=10)
+
+root.mainloop()
