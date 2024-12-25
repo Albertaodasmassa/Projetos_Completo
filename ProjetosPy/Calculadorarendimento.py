@@ -14,7 +14,7 @@ def calculadorarf():
         messagebox.showerror("Erro favor Informar valores validos")
     
 root = tk.Tk()
-root.title("Bem vindo a calculadora de renda fixa")
+root.title("Bem vindo a calculadora")
 root.geometry("300x450")
 
 label_juro = tk.Label(root,text="Rendimento até o momento")
