@@ -1,5 +1,4 @@
 from tkinter import *
-import os
 from tkinter import messagebox
 import tkinter as tk
 
