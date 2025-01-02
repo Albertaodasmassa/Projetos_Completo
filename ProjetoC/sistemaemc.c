@@ -3,7 +3,7 @@
 #include <math.h>
 int main () {
    int opcao=0.0;
-   printf("Digite a opcao\n 1-Calculadora de Juros\n 2- Calculadora de rendimento aplicao\n");
+   printf("Digite a opcao\n  1-Calculadora de Juros:\n  2- Calculadora de rendimento aplicao:\n  3-Calculadora de Nota:");
    scanf("%d",&opcao);
 
    void calc()
@@ -48,8 +48,30 @@ int main () {
    }
    void calculadora()
    {
+       double nota1,nota2,nota3,res;
+       char nome[50],sobrenome[50];
+       printf("Bem vindo ao sistema\n");
+       printf("Insira a primeira nota\n");
+       scanf("%lf",&nota1);
+       printf("Insira a segunda nota\n");
+       scanf("%lf",&nota2);
+       printf("Insira a terceira nota\n");
+       scanf("%lf",&nota3);
+       printf("Insira o nome do aluno\n");
+       scanf("%s",&nome);
+       printf("Insira o sobrenome\n");
+       scanf("%s",&sobrenome);
+       res = (nota1+nota2+nota3)/3;
+       printf("A media do aluno %s %s %.2f\n", nome, sobrenome, res);
+       if(res>=5)
+       {
+         printf("Aluno aprovado\n");
+       }else
+       {
+         printf("Aluno reprovado\n");
+       }
    }
-   while(opcao!=3){
+   while(opcao!=4){
         scanf("d",&opcao);
     switch(opcao){
             case 1:
@@ -58,11 +80,14 @@ int main () {
             case 2:
             calc_rf();
             break;
+            case 3:
+            calculadora();
+            break;
             default:
             printf("Opcao Invalida");
             break;
    }
-    printf("Digite a opcao\n 1-Calculadora de Juros\n 2- Calculadora de rendimento aplicao\n");
+    printf("Digite a opcao\n 1-Calculadora de Juros\n 2- Calculadora de rendimento aplicao\n 3-Calculadora de Nota");
    }
 
 
